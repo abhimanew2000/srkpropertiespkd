@@ -1,0 +1,184 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRK PROPERTIES</title>
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/hero/logo.png' %}">
+
+    <style>
+        table{
+            border:1px solid rgb(83, 53, 53);
+            width: 500px;
+            height: 500px;
+            margin-left: 500px;
+            /* background-color:; */
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+        td{
+            border: 1px solid black;
+            border-radius: 10px;
+            
+        }
+        input{
+            width: 150px;
+            margin-left: 30px;
+            border-radius: 5px;
+        }
+        button{
+            margin-left: 200px;
+            background-color: blueviolet;
+            color: white;
+        
+        }
+        h1{
+            text-align: center;
+            color: red;
+        }
+        a{
+            margin-left: 502px;
+            font-size: large;
+        }
+
+
+        
+       
+
+    </style>
+
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <nav class="navbar bg-body-tertiary">
+                    <div class="container-fluid">
+                      <a class="navbar-brand" href="{% url 'SRKAPP:index' %}">HOME</a>
+                    </div>
+                  </nav>
+            </div>
+        </div>
+     </div>
+    <h1>UPDATE PRODUCT</h1>
+    <a href="{% url 'SRKAPP:sdashboard' %}">DASHBOARD</a>
+   
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+       
+        
+        <table>
+            <tr>
+                <td>PRODUCT NAME</td>
+                <td><input type="text" name="name" id="" value="{{product.property_name}}"></td>
+            </tr>
+            <tr>
+                <td>PROPERTY_TYPE</td>
+                <td><input type="text" name="type" id="" value="{{product.property_type}}"></td>
+            </tr>
+            <tr>
+                <td>DIMENSION</td>
+                <td><input type="text" name="pdimen" id="" value="{{product.dimension}}"></td>
+            </tr>
+            <tr>
+                <td>PRICE</td>
+                <td><input type="number" name="price" id="" value="{{product.price}}"></td>
+            </tr>
+            <tr>
+                <td>ADDRESS</td>
+                <td><input type="text" name="add" id="" value="{{product.address}}"></td>
+            </tr>
+            <tr>
+                <td>POSSESIONE</td>
+                <td><input type="text" name="poss" id="" value="{{product.possession}}"></td>
+            </tr>
+            <tr>
+                <td>IMAGE 1</td>
+                <td> <img src="{{product.property_image1.url}}" alt="" style="width: 150px; height: 150px;">
+                    <input type="file" name="image1" id="" value="" accept="image/*"width="60px"></td>
+            </tr>
+            {% if product.property_image2 %}
+            <tr>
+                <td>IMAGE 2</td>
+                <td>
+                     <img src="{{product.property_image2.url}}" alt="" style="width: 150px; height: 150px;">
+                     
+                    <input type="file" name="image2" id="" value="{{product.property_image2.url}}" width="60px"></td>
+                   
+            </tr>
+            {% endif %}
+            {% if product.property_image3 %}
+            <tr>
+                <td>IMAGE 3</td>
+                <td>
+                    <img src="{{product.property_image3.url}}" alt="" style="width: 150px; height: 150px;">
+                    <input type="file" name="image3" id="" value="{{product.property_image3.url}}" width="60px"></td>
+                   
+            </tr>
+            {% endif %}
+            {% if product.property_image4 %}
+            <tr>
+                <td>IMAGE 4</td>
+                <td> 
+                    <img src="{{product.property_image4.url}}" alt="" style="width: 150px; height: 150px;">
+                    <input type="file" name="image4" id="" value="{{product.property_image4.url}}" width="60px"></td>
+                    
+            </tr>
+            {% endif %}
+            {% if product.property_image5 %}
+            <tr>
+                <td>IMAGE 5</td>
+                <td>
+                    <img src="{{product.property_image5.url}}" alt="" style="width: 150px; height: 150px;">
+                    <input type="file" name="image5" id="" value="{{product.property_image5.url}}" width="60px"></td>
+                    
+            </tr>
+            {% endif %}
+            {% if product.property_image6 %}
+            <tr>
+                <td>IMAGE 6</td>
+                <td>
+                     <img src="{{product.property_image6.url}}" alt="" style="width: 150px; height: 150px;">
+                    <input type="file" name="image6" id="" value="{{product.property_image6.url}}" width="60px"></td>
+                   
+            </tr>
+            {% endif %}
+            {% if product.property_image7 %}
+            <tr>
+                <td>IMAGE 7</td>
+                <td>
+                     <img src="{{product.property_image7.url}}" alt="" style="width: 150px; height: 150px;">
+                    <input type="file" name="image7" id="" value="{{product.property_image7.url}}" width="60px"></td>
+                   
+            </tr>
+            {% endif %}
+            {% if product.property_image8 %} 
+            <tr>
+                <td>IMAGE 8</td>
+                <td>
+                    <img src="{{product.property_image8.url}}" alt="" style="width: 150px; height: 150px;">
+                    <input type="file" name="image8" id="" value="{{product.property_image8.url}}" width="60px"></td>
+                    
+            </tr>
+            {% endif %}
+            <tr>
+                <td>DESCRIPTION</td>
+                <td><input type="text" name="description" id="" value="{{product.description}}"></td>
+            </tr>
+            
+            <tr>
+               
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button type="submit">update</button>
+                </td>
+            </tr>
+        </table>
+      
+        
+    </form>
+    
+</body>
+</html>

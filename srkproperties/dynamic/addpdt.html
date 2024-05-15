@@ -1,0 +1,171 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRK PROPERTIES</title>
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/hero/logo.png' %}">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        .container-fluid{
+            border: 1px solid black;
+            background-image: url();
+            width:600px;
+            margin-top: 150px;
+            border-radius: 10px;
+            /* height: 380px; */
+            background-color:darkblue;
+
+            
+
+        }
+        a{
+            text-align: center;
+            text-decoration: none;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: 500px;
+            font-size: large;
+            color: white;
+          
+            
+
+        }
+        h4{
+            text-align: center;
+            width: 420px;
+            
+        }
+        td{
+            padding-top: 20px;
+            color: white;
+        }        
+        .col-1 {
+            flex: 0 0 auto;
+            width: 1.333333%;
+        }
+        body{
+
+            background-color:lightgrey;
+        }
+        input{
+            border-radius: 10px;
+        }
+
+       
+        
+        
+    </style>
+
+
+</head>
+<body>
+   
+                    
+    <a class="navbar-brand" href="{% url 'SRKAPP:index' %}" style="margin-left: 20px; color:darkblue;">HOME</a>
+                    
+                
+            
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-1">
+            <table>
+                <tr>
+                    <td><a href="{% url 'SRKAPP:sdashboard' %}"><h4>DASHBOARD</h1></a></td>
+                </tr>
+            </table>
+            <form action="{% url 'SRKAPP:addpdt' %}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <table>
+                    <tr>
+                        <td>PROPERTY NAME :</td>
+                        <td><input type="text" name="name" id="" size="20" maxlength="50" style="width: 300px;"></td>
+                    </tr>
+                    <tr>
+                        <td>PROPERTY TYPE:</td>
+                        <td><input type="text" name="type" id="" size="20" maxlength="50" style="width: 300px;"></td>
+                    </tr>
+                    <tr>
+                        <td>DIMENSION :</td>
+                        <td><input type="text" name="pdimen" id="" size="20" maxlength="50" style="width: 300px;"></td>
+                    </tr>
+                    <tr>
+                        <td>PRICE :</td>
+                        <td><input type="number" name="price" id="" size="20" maxlength="50" style="width: 300px;"></td>
+                    </tr>
+                    <tr>
+                        <td>ADDRESS :</td>
+                        <td><input type="text" name="add" id="" size="20" maxlength="50" style="width: 300px;"></td>
+                    </tr>
+                    <tr>
+                        <td>POSSESSION :</td>
+                        <td><input type="text" name="poss" id="" size="20" maxlength="50" style="width: 300px;"></td>
+                    </tr>
+                    <tr>
+                        <td>IMAGE 1 :</td>
+                        <td><input type="file" name="image1" id="" size="20" maxlength="50" style="width: 300px;"></td>
+                    </tr>
+                    <tr>
+                        <td>IMAGE 2 :</td>
+                        <td><input type="file" name="image2" id="" size="20" maxlength="50" style="width: 300px;"></td>
+                    </tr>
+                    <tr>
+                        <td>IMAGE 3 :</td>
+                        <td><input type="file" name="image3" id="" size="20" maxlength="50" style="width: 300px;"></td>
+                    </tr>
+                    <tr>
+                        <td>IMAGE 4 :</td>
+                        <td><input type="file" name="image4" id="" size="20" maxlength="50" style="width: 300px;"></td>
+                    </tr>
+                    <tr>
+                        <td>IMAGE 5 :</td>
+                        <td><input type="file" name="image5" id="" size="20" maxlength="50" style="width: 300px;"></td>
+                    </tr>
+                    <tr>
+                        <td>IMAGE 6 :</td>
+                        <td><input type="file" name="image6" id="" size="20" maxlength="50" style="width: 300px;"></td>
+                    </tr>
+                    <tr>
+                        <td>IMAGE 7 :</td>
+                        <td><input type="file" name="image7" id="" size="20" maxlength="50" style="width: 300px;"></td>
+                    </tr>
+                    <tr>
+                        <td>IMAGE 8 :</td>
+                        <td><input type="file" name="image8" id="" size="20" maxlength="50" style="width: 300px;"></td>
+                    </tr>
+                    <tr>
+                        <td>DESCRIPTION :</td>
+                        <td><input type="text" name="description" id="" size="20" maxlength="50" style="width: 300px;"></td>
+                    </tr>
+                    
+                    <tr>
+                        <!-- <td>CATEGORY :</td>
+                        <td>
+                            <select name="category" id="">
+                                {% for category in categories %}
+                                <option value="{{ category.id }}">{{category.name}}</option>
+                                {% endfor %}
+                                
+                            </select>
+                        </td> -->
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="submit" value="ADD" style="width: 200px; background-color: blue; color: white;" >
+                        </td>
+                    </tr>
+                </table>
+            </form>
+            </div>
+            
+        </div>
+     
+
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

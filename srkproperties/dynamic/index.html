@@ -1,0 +1,589 @@
+{% load static %}
+
+<!doctype html>
+<html class="no-js" lang="zxx">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>SRK PROPERTIES</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/hero/logo.png' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/slicknav.css' %}">
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/progressbar_barfiller.css' %}">
+    <link rel="stylesheet" href="{% static 'css/gijgo.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animated-headline.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fontawesome-all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/themify-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'css/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    
+</head>
+<style>
+     #img12{
+    width: 250px;
+    height:200px;
+    max-height: 250px;
+    transition: transform 250ms;
+  }
+    .search-toggle {
+    width: auto;
+  
+    display: table;
+}
+.search-toggle input[type=text] {
+    position: relative;
+    padding: 15px 30px 15px 17px;
+    width: 48px;
+    height: 48px;
+    color: #333;
+    font-size: 17px;
+    border: none;
+    border-radius: 30px;
+    outline: none;
+    transition: 0.5s ease;
+    
+}
+.search-toggle input[type=text]:hover {
+    width: 150px;
+}
+.search-toggle input[type=text]:focus {
+	width: 300px;
+}
+.search-toggle i {
+    position: relative;
+    left: -33px;
+    top: 3px;
+    font-size: 20px;
+    color: #333;
+}
+@media only screen and (max-width: 768px) {
+.row1{
+    overflow-x: scroll;
+}
+.footerpart{
+    max-width: fit-content;
+    display: flex;
+}
+footer{
+    width: 100%;
+    text-align: center;
+}
+.footer-logo{
+    align-items: center;
+}
+.extra{
+    display: none;
+}
+.extra{
+    display: none;
+}
+.vis{
+    visibility: visible;
+}
+}
+</style>
+<body class="full-wrapper">
+    <!-- ? Preloader Start -->
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="preloader-circle"></div>
+                <div class="preloader-img pere-text">
+                    <img src="{% static 'images/hero/logo.png' %}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Preloader Start-->
+    <header >
+        <!-- Header Start -->
+        <div class="header-area ">
+            <div class="main-header header-sticky">
+                <div class="container-fluid">
+                    <div class="menu-wrapper d-flex align-items-center justify-content-between">
+                        <div class="header-left d-flex align-items-center">
+                            <!-- Logo -->
+                            <div class="logo">
+                                <a href="index.html"><img src="{% static 'images/hero/logo.png' %}" alt="" style="width: 225px;"></a>
+                            </div>
+                            <!-- Main-menu -->
+                            <div class="main-menu  d-none d-lg-block">
+                                <nav>
+                                    <ul id="navigation">
+                                        <li><a href="{% url 'SRKAPP:index' %}">Home</a></li> 
+                                        <li><a href="{% url 'SRKAPP:productpage' %}">Properties</a></li>
+                                        <li><a href="{% url 'SRKAPP:contact' %}" >Contact</a></li>
+                                       
+                                        <!-- <li><a href="contact.html">Login/Register</a></li> -->
+                                    </ul>
+                                </nav>
+                            </div>   
+                        </div>
+                        <div class="header-right1 d-flex align-items-center">
+                            <!-- Social -->
+                            <div class="header-social d-none d-md-block">
+                                <a href="https://www.instagram.com/renjithsivaswamy?igsh=NGI2aHY2emJmaXNy"><i class="bi bi-instagram"></i></a>
+                                <a href="https://www.facebook.com/share/oEtKHk3h3xDCRMNe/?mibextid=qi2Omg"><i class="fab fa-facebook-f"></i></a>
+                                <a href="https://youtube.com/@Saathvik98?si=FXoiFeFYM8XIDTna"><i class="bi bi-youtube"></i></a>
+                            </div>
+                            <!-- Search Box -->
+                            <div class="search d-none d-md-block">
+                                <ul class="d-flex align-items-center">
+                                    <li class="mr-15">
+                                        <!-- <div class="nav-search search-switch">
+                                            <i class="ti-search"></i>
+                                        </div>-->
+                                        <form action="{% url 'SRKAPP:search' %}" method="get">
+                                            {% csrf_token %}
+                                        <div class="search-toggle">
+                                            <input type="text" name="keyword" placeholder="Search....">
+                                            <i class="fa fa-search"></i>
+                                          </div>
+                                        </form>
+                                        
+                                    </li> 
+                                    <!-- <li>
+                                        <div class="card-stor">
+                                            <img src="assets/img/gallery/card.svg" alt="">
+                                            <span>0</span>
+                                        </div>
+                                    </li> -->
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Mobile Menu -->
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header End -->
+    </header>
+    <!-- header end -->
+    <main>
+        <!--? Hero Area Start-->
+        <div class="container-fluid">
+            <div class="slider-area">
+                <!-- Mobile Device Show Menu-->
+                <div class="header-right2 d-flex align-items-center">
+                    <!-- Social -->
+                    <!-- <div class="header-social  d-block d-md-none">
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="https://bit.ly/sai4ull"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="bi bi-youtube"></i></a>
+                    </div> -->
+                    <!-- Search Box -->
+                    <div class="search d-block d-md-none" >
+                        <ul class="d-flex align-items-center">
+                            <li class="mr-15">
+                                <div class="search-toggle">
+                                            <input type="text" name="keyword" placeholder="Search....">
+                                            <i class="fa fa-search"></i>
+                                          </div>
+                            </li>
+                            <li>
+                                <!-- <div class="card-stor">
+                                    <img src="assets/img/gallery/card.svg" alt="">
+                                    <span>0</span>
+                                </div>
+                            </li> -->
+                        </ul>
+                    </div>
+                </div>
+                <!-- /End mobile  Menu-->
+
+                <div class="slider-active dot-style">
+                    <!-- Single -->
+                    <div class="single-slider slider-bg1 hero-overly slider-height d-flex align-items-center">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-xl-8 col-lg-9">
+                                    <!-- Hero Caption -->
+                                    <div class="hero__caption">
+                                        <h1>GET YOUR<br>DREAM<br>PROPERTRY</h1>
+                                        <a href="{% url 'SRKAPP:productpage' %}" class="btn">Explore</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Single -->
+                    <div class="single-slider slider-bg2 hero-overly slider-height d-flex align-items-center">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-xl-8 col-lg-9">
+                                    <!-- Hero Caption -->
+                                    <div class="hero__caption">
+                                        <h1>GET YOUR<br>DREAM<br>PROPERTRY</h1>
+                                        <a href="{% url 'SRKAPP:productpage' %}" class="btn">Explore</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Single -->
+                    <div class="single-slider slider-bg3 hero-overly slider-height d-flex align-items-center">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-xl-8 col-lg-9">
+                                    <!-- Hero Caption -->
+                                    <div class="hero__caption">
+                                        <h1>GET YOUR<br>DREAM<br>PROPERTRY</h1>
+                                        <a href="{% url 'SRKAPP:productpage' %}" class="btn">Explore</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Hero -->
+        <!--? Popular Items Start -->
+        <div class="popular-items pt-50">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="single-popular-items mb-50 text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay=".1s">
+                            <div class="popular-img vis" style="height: 410px;" >
+                                <!-- <img src="assets/img/gallery/popular1.png" alt=""> -->
+                                <img src="{% static 'images/hero/cocofarm1.jpg' %}" alt="">
+
+                                <div class="img-cap">
+                                    <span>Coconut Field</span>
+                                </div>
+                                <div class="favorit-items">
+                                 <a href="coconut" class="btn">Explore</a>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+                 <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="single-popular-items mb-50 text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">
+                        <div class="popular-img vis" style="height: 410px;">
+                            <img src="{% static 'images/hero/home.jpg' %}" alt="">
+                            <div class="img-cap ">
+                                <span>Houses</span>
+                            </div>
+                            <div class="favorit-items">
+                             <a href="house" class="btn">Explore</a>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+             <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="single-popular-items mb-50 text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">
+                    <div class="popular-img vis" style="height: 410px;">
+                        <img src="{% static 'images/hero/Villas2.jpg' %}" alt="">
+                        <div class="img-cap">
+                            <span>Commwercial Properties</span>
+                        </div>
+                        <div class="favorit-items">
+                         <a href="commercialproperty" class="btn">Explore</a>
+                     </div>
+                 </div>
+             </div>
+         </div>
+         <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="single-popular-items mb-50 text-center wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
+                <div class="popular-img vis" style="height: 410px;">
+                    <img src="{% static 'images/hero/emptyplot.jpg' %}" alt="">
+                    <div class="img-cap">
+                        <span>Plots</span>
+                    </div>
+                    <div class="favorit-items">
+                     <a href="plot" class="btn">Explore</a>
+                 </div>
+             </div>
+         </div>
+     </div>
+ </div>
+</div>
+</div>
+<!-- Popular Items End -->
+<!--? New Arrival Start -->
+<section class="shop_section layout_padding col-12 col-lg-12 col-sm-8 mt-3">
+    <div class="container">
+      <div class="heading_container heading_center" style="    display: flex;
+      justify-content: center;">
+        <h2>
+          Latest Properties
+        </h2>
+      </div>
+      <div class="row1" style="display: grid; grid-template-columns: repeat(4,1fr); gap: 40px; padding-left: 70px;">
+      {% for i in data %}
+      <div class="row mobrow" >
+        <div class="" style="padding: 30px; ">
+          <div class="box">
+            <a href="/productdetails/{{ i.id }}/" style="width: 200px; height: 200px;">
+              <div class="img-box">
+                <img src="{{i.property_image1.url}}" alt="" id="img12">
+              </div>
+              <div class="detail-box" style=" padding-top: 10px;">
+                <h6 style="text-align:center; font-size: larger; font-family: math;">
+                    {{ i.property_name }}
+                </h6>
+                <h6 style="text-align:center; font-size: larger; font-family: math;">
+                  Price
+                  <span>
+                    ₹{{i.price}}
+                  </span>
+                </h6>
+              </div>
+              <div class="new">
+                <span>
+                  New
+                </span>
+              </div>
+            </a>
+          </div>
+        </div>
+        </div>
+        {% endfor %}
+      
+    </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="room-btn">
+            <a href="{% url 'SRKAPP:productpage' %}" class="border-btn">Browse More</a>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="contact section-bg" style="display: none;">
+    <div class="container" data-aos="fade-up">
+
+      <div class="row" >
+
+        <div class="col-md-12">
+          <form id="myForm" action="{% url 'SRKAPP:email' %}" method="post" role="form" class="php-email-form">
+            {% csrf_token %}
+
+            <div class="row " >
+              <div style="text-align: right; padding-bottom: 15px;"><i class="bi bi-x" onclick="closeForm()" style="text-align: right; font-size: xx-large;"></i></div>
+              <div class="col-md-6 form-group">
+                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+              </div>
+              <div class="col-md-6 form-group mt-3 mt-md-0">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+              </div>
+            </div>
+            <div class="form-group mt-3">
+              <input type="text" class="form-control" name="number" id="number" placeholder="Subject" required>
+            </div>
+            <div class="form-group mt-3">
+              <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+            </div>
+            <div class="my-3">
+              <div class="loading">Loading</div>
+              <div class="error-message"></div>
+              <div class="sent-message">Your message has been sent. Thank you!</div>
+            </div>
+            <div class="text-center"><button type="submit" >Send Message</button></div>
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+<!-- End Contact Section -->
+
+  <!-- map -->
+  <section id="team" class="team">
+    <div class="container ">
+
+      <div class="section-title" data-aos="fade-in" data-aos-delay="100">
+        <h2 class="text-danger" style="text-align: center; font-weight: bolder; color: #1d2547 !important;">Location</h2>
+        <!-- <p class="text-primary">QM74+FRQ, Palakkad-Koduvayur, Thathamangalam-Meenakshipuram Highway, Kenathuparambu, Kunathurmedu, Palakkad, Kerala 678001.</p> -->
+      </div>
+
+      <div class="row">
+
+        <div class=" col-md-12" >
+          <div class="member" data-aos="fade-up" data-aos-delay="150">
+            <a href="https://www.google.com/maps/place/10%C2%B044'15.5%22N+76%C2%B050'03.1%22E/@10.7376451,76.8316231,17z/data=!3m1!4b1!4m4!3m3!8m2!3d10.7376451!4d76.834198?hl=en&entry=ttu"><img src="{% static 'images/hero/screenmap.png' %}" class="img-fluid" alt=""></a>
+            <div class="member-info">
+              <h4>Palakkad</h4>
+              <span>Palakkad | Kozhinjampara | Polachi | Udumalai | pazani | coimbatore</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section><!-- End map Section -->
+</main>
+<footer>
+    <!-- Footer Start-->
+    <div class="footer-area footer-padding footerpart" >
+        <div class="container-fluid ">
+            <div class="row d-flex justify-content-between footerpart">
+                <div class="col-xl-3 col-lg-3 col-md-8 col-sm-8 col-12 col-lg-12">
+                 <div class="single-footer-caption mb-50">
+                   <div class="single-footer-caption mb-30">
+                      <!-- logo -->
+                      <div class="footer-logo mb-35">
+                       <a href="index.html"><img src="{% static 'images/hero/logo.png' %}" alt="" style="width: 100%;"></a>
+                   </div>
+                   <div class="footer-tittle">
+                       <div class="footer-pera">
+                           <p>"A home is more than a place to live,it's a place to create a memories."</p>
+                       </div>
+                   </div>
+                   <!-- social -->
+                   <div class="footer-social">
+                    <a href="https://www.instagram.com/renjithsivaswamy?igsh=NGI2aHY2emJmaXNy"><i class="bi bi-instagram"></i></a>
+                    <a href="https://www.facebook.com/share/oEtKHk3h3xDCRMNe/?mibextid=qi2Omg"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://youtube.com/@Saathvik98?si=FXoiFeFYM8XIDTna"><i class="bi bi-youtube"></i></a>                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-4 extra" style="padding-top: 30px;">
+        <div class="single-footer-caption mb-50">
+            <div class="footer-tittle extra">
+                <h4>Quick links</h4>
+                <ul>
+                    <li><a href="{% url 'SRKAPP:index' %}">Home</a></li> 
+                    <li><a href="{% url 'SRKAPP:productpage' %}">Properties</a></li>
+                    <li><a href="{% url 'SRKAPP:contact' %}" >Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-4 extra" style="padding-top: 30px;">
+        <div class="single-footer-caption mb-50">
+            <div class="footer-tittle extra">
+                <h4>Categories</h4>
+                <ul>
+                    <li><a href="coconut">Coconut farms</a></li>
+                    <li><a href="plot">Empty Plots</a></li>
+                    <li><a href="commercialproperty">Commercial Properties</a></li>
+                    <li><a href="house">Houses</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-2 col-lg-2 col-md-4 col-sm-4 extra" style="padding-top: 30px;">
+        <div class="single-footer-caption mb-50">
+            <div class="footer-tittle extra">
+                <h4>Places</h4>
+                <ul>
+                    <li><a href="">Palakkad</a></li>
+                    <li><a href="">Kozhinjampara</a></li>
+                    <li><a href="">Pollachi</a></li>
+                    <li><a href="">Udumalai</a></li>
+                    <li><a href="">Pazhani</a></li>
+                    <li><a href="">Coimbatore</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-4 extra" style="padding-top: 30px;">
+        <div class="single-footer-caption mb-50">
+            <div class="footer-tittle">
+                <h4>Get in touch</h4>
+                <ul>
+                    <li><a href="#">9495133387,<br>9961704469</a></li>
+                    <li><a href="#">renjithsiva123@gmail.com</a></li>
+                    <li><a href="#">Kozhinjampara,Palakkad,Kerala</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<!-- footer-bottom area -->
+  <!-- Footer End-->
+</footer>
+<!--? Search model Begin -->
+<div class="search-model-box">
+    <div class="h-100 d-flex align-items-center justify-content-center">
+        <div class="search-close-btn">+</div>
+        <form class="search-model-form">
+            <input type="text" id="search-input" placeholder="Searching key.....">
+        </form>
+    </div>
+</div>
+<!-- Search model end -->
+<!-- Scroll Up -->
+<div id="back-top" >
+    <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
+</div>
+
+<!-- JS here -->
+<script>
+    // enquiry button
+  
+      function openForm() {
+        document.getElementById("contact").style.display = "block";
+      }
+      function closeForm() {
+        document.getElementById("contact").style.display = "none";
+      }
+  
+    //   function changeImage(thumbnail) {
+    //     const mainImage = document.getElementById('mainImage');
+    //     mainImage.src = thumbnail.src;
+    //   }
+    </script>
+<!-- Jquery, Popper, Bootstrap -->
+<script src="{% static 'js/vendor/modernizr-3.5.0.min.js' %}"></script>
+<script src="{% static 'js/vendor/jquery-1.12.4.min.js' %}"></script>
+<script src="{% static 'js/popper.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+<!-- Slick-slider , Owl-Carousel ,slick-nav -->
+<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'js/slick.min.js' %}"></script>
+<script src="{% static 'js/jquery.slicknav.min.js' %}"></script>
+
+<!-- One Page, Animated-HeadLin, Date Picker -->
+<script src="{% static 'js/wow.min.js' %}"></script>
+<script src="{% static 'js/animated.headline.js' %}"></script>
+<script src="{% static 'js/jquery.magnific-popup.js' %}"></script>
+<script src="{% static 'js/gijgo.min.js' %}"></script>
+
+<!-- Nice-select, sticky,Progress -->
+<script src="{% static 'js/jquery.nice-select.min.js' %}"></script>
+<script src="{% static 'js/jquery.sticky.js' %}"></script>
+<script src="{% static 'js/jquery.barfiller.js' %}"></script>
+
+<!-- counter , waypoint,Hover Direction -->
+<script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+<script src="{% static 'js/waypoints.min.js' %}"></script>
+<script src="./assets/js/jquery.countdown.min.js"></script>
+<script src="./assets/js/hover-direction-snake.min.js"></script>
+
+<!-- contact js -->
+<script src="{% static 'js/contact.js' %}"></script>
+<script src="{% static 'js/jquery.form.js' %}"></script>
+<script src="{% static 'js/jquery.validate.min.js' %}"></script>
+<script src="{% static 'js/mail-script.js' %}"></script>
+<script src="{% static 'js/jquery.ajaxchimp.min.js' %}"></script>
+
+<!-- Jquery Plugins, main Jquery -->	
+<script src="{% static 'js/plugins.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+
+</body>
+</html>

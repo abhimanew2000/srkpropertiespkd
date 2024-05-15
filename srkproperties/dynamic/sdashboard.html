@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRK PROPERTIES</title>
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/hero/logo.png' %}">
+
+    <style>
+        table{
+            border: 1px solid black;
+            width: 1450px;
+            height:1000px;
+            padding-top: 0px;
+        }
+        th{
+            padding-top: 10px;
+            color:black;
+            border: 1px solid black;
+            
+        }
+        .tr{
+            background-color:blueviolet;
+        }
+        h4{
+            text-align: center;
+            color:darkcyan;
+            text-decoration: none;
+            font-weight: 100px;
+            font-size: large;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <nav class="navbar bg-body-tertiary">
+                    <div class="container-fluid">
+                      <a class="navbar-brand" href="{% url 'SRKAPP:index' %}">HOME</a>
+                      <a class="navbar-brand" href="logout">logout</a>
+                    </div>
+                  </nav>
+            </div>
+        </div>
+     </div>
+    <a href="{% url 'SRKAPP:addpdt' %}"><h4>Add Product</h4></a>
+
+    
+    
+    <table>
+        <tr class="tr">
+            <th>IMAGE</th>
+            <th>NAME</th>
+            <th>DESCRIPTION</th>
+            <th>PRICE</th>
+            
+             <th>CATEGORY</th>
+             <th>UPDATE</th>
+             <th>DELETE</th>
+        </tr>
+        {% for i in data %}
+        <tr>
+            <th><img src="{{i.property_image1.url}}" alt="" width="60px"></th>
+            <th>{{i.property_name}}</th>
+            <th>{{i.description}}</th>
+            <th>{{i.price}}</th>
+            <th>{{i.property_type}}</th>
+            <th><a href="{% url 'SRKAPP:update_pdt' pid=i.id %}">update</a></th>
+            <th><a href="{% url 'SRKAPP:pdt_delete' pid=i.id %}">delete</a></th>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
